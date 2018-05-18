@@ -24,6 +24,7 @@ import (
 	"github.com/kubicorn/kubicorn/profiles/googlecompute"
 	"github.com/kubicorn/kubicorn/profiles/openstack/ovh"
 	"github.com/kubicorn/kubicorn/profiles/packet"
+	"github.com/kubicorn/kubicorn/profiles/triton"
 
 	"fmt"
 	"math"
@@ -160,7 +161,10 @@ var ProfileMapIndexed = map[string]ProfileMap{
 		ProfileFunc: packet.NewUbuntuCluster,
 		Description: "Ubuntu on Packet x86",
 	},
-
+	"triton": {
+		ProfileFunc: triton.NewUbuntuCluster,
+		Description: "Ubuntu on Triton",
+	},
 	// -----------------------------------------------------------------------------------------------------------------
 	//
 	// Controller profiles

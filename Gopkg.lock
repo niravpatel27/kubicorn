@@ -240,6 +240,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/hashicorp/errwrap"
+  packages = ["."]
+  revision = "7554cd9344cec97297fa6649b055a8c98c2a1e55"
+
+[[projects]]
+  branch = "master"
   name = "github.com/hashicorp/hcl"
   packages = [
     ".",
@@ -276,6 +282,15 @@
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
   revision = "0b12d6b5"
+
+[[projects]]
+  name = "github.com/joyent/triton-go"
+  packages = [
+    ".",
+    "authentication"
+  ]
+  revision = "1559c2f66119311ccce922e881d36cfd11f3aa96"
+  version = "0.5.2"
 
 [[projects]]
   name = "github.com/json-iterator/go"
@@ -838,6 +853,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "abe4a0167c17ed9bad574c724b31b51616ab51b1f4c4c8e834f6edff091db452"
+  inputs-digest = "62ff9c92c703bcb65c71d0ddd073418360e0f9566187f5a2f28a25b40df0b2b2"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -37,6 +37,9 @@ import (
 	"github.com/kubicorn/kubicorn/cloud/packet/packetSDK"
 	packetpub "github.com/kubicorn/kubicorn/cloud/packet/public"
 	packetr "github.com/kubicorn/kubicorn/cloud/packet/public/resources"
+	tritonpub "github.com/kubicorn/kubicorn/cloud/triton/public"
+	tritonr "github.com/kubicorn/kubicorn/cloud/triton/public/resources"
+	"github.com/kubicorn/kubicorn/cloud/triton/tritonSDK"
 )
 
 // RuntimeParameters contains specific parameters that needs to be passed to each
@@ -95,6 +98,13 @@ func GetReconciler(known *cluster.Cluster, runtimeParameters *RuntimeParameters)
 		}
 		packetr.Sdk = sdk
 		return cloud.NewAtomicReconciler(known, packetpub.NewPacketPublicModel(known)), nil
+	case cluster.CloudTriton:
+		sdk, err := tritonSDK.NewSdk()
+		if err != nil {
+			return nil, err
+		}
+		tritonr.Sdk = sdk
+		return cloud.NewAtomicReconciler(known, tritonpub.NewTritonComputeModel(known)), nil
 	default:
 		return nil, fmt.Errorf("Invalid cloud type: %s", known.ProviderConfig().Cloud)
 	}

@@ -22,3 +22,6 @@ See the [Kubicorn project walkthrough](http://kubicorn.io/documentation/readme.h
 
 ## Adding a Cloud Provider
 To add a new cloud provider, please see the document [Adding a new cloud provider](../docs/_documentation/cloud-providers.md).
+
+
+java.nio.file.NoSuchFileException: /nonexistent/.kube/config

@@ -31,6 +31,7 @@ const (
 	CloudDigitalOcean = "digitalocean"
 	CloudOVH          = "ovh"
 	CloudPacket       = "packet"
+	CloudTriton       = "triton"
 )
 
 // Cluster is what we use internally in Kubicorn.
